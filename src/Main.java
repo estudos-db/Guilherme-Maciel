@@ -17,11 +17,13 @@ public class Main {
         Paciente paciente3 = new Paciente("Bruno", 18, "porto seguro");
         Paciente paciente4 = new Paciente("Joao", 42, "bradesco");
         Paciente paciente5 = new Paciente("Anderson", 31, "unimed");
+        Paciente paciente6 = new Paciente(nome: "Fulano", idade: 32, convenio: "unimed");
 
         Medico medico1 = new Medico("Ana", 34, 111-111-111, Especialidade.CARDIO);
         Medico medico2 = new Medico("Daniela", 39, 222-222-222, Especialidade.NEURO);
         Medico medico3 = new Medico("Paulo", 43, 333-333-333, Especialidade.FISIO);
         Medico medico4 = new Medico("Maria", 58, 444-444-444, Especialidade.CARDIO);
+        Medico medico5 = new Medico("Fulana", 54, 555-555-555, Especialidade.CARDIO);
 
         clinica.armazenaMedico(medico1.getNome(), medico1.getIdade(), medico1.getCrm(), medico1.getEspecialidade());
         clinica.armazenaMedico(medico2.getNome(), medico2.getIdade(), medico2.getCrm(), medico2.getEspecialidade());
