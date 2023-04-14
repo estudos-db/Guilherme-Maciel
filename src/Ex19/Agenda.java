@@ -51,14 +51,5 @@ public class Agenda {
         System.out.println(posicao);
     }
 
-    public void imprimePessoas() {
-        for (int i = 0; i<pessoas.size(); i++) {
-            System.out.println(pessoas.get(i));
-        }
-    }
-
-    public void imprimePessoa(int posicao) {
-        System.out.println(pessoas.get(posicao));
-    }
 
 }

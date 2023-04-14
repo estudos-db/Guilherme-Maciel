@@ -22,17 +22,8 @@ public class Main {
         agenda1.armazenaPessoa(pessoa3.getNome(), pessoa3.getIdade(), pessoa3.getAltura());
         agenda1.armazenaPessoa(pessoa4.getNome(), pessoa4.getIdade(), pessoa4.getAltura());
 
-        //agenda1.removePessoa("Guilherme");
-
-        //agenda1.removePessoaPorIdade(31);
-
-        agenda1.buscaPessoa("Daniela");
+        agenda1.removePessoa("Guilherme");
 
         System.out.println(agenda1);
-        //agenda1.imprimePessoas();
-
-        //agenda1.imprimePessoa(1);
-
-        //System.out.println(pessoas);
     }
 }
