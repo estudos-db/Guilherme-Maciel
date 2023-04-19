@@ -51,7 +51,7 @@ public class Main {
                     pedidoService.realizarPedido();
                 }
                 case 4 -> {
-                    System.out.println("encerrando o programa...");
+                    System.out.println("Programa encerrado");
                     aux = false;
                     sc.close();
                 }
