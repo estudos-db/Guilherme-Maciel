@@ -29,16 +29,18 @@ public class PedidoServico {
     }
 
     public void fecharPedido(BigDecimal valorPedido) {
+        BigDecimal troco;
         System.out.println("Valor total do pedido: " + valorPedido);
         System.out.println("Valor pago: ?");
         BigDecimal dinheiroRecebido = sc.nextBigDecimal();
 
         if (dinheiroRecebido.compareTo(valorPedido) < 0) {
-            System.out.println("Dinheiro insuficiente");
+            throw new RuntimeException("Dinheiro insuficiente");
         } else if (dinheiroRecebido.compareTo(valorPedido) == 0) {
             System.out.println("Compra finalizada");
         } else {
-            //troco
+            troco = dinheiroRecebido.subtract(valorPedido);
+            System.out.println("Compra finalizada! Seu troco é: " + troco);
         }
     }
 }
