@@ -19,7 +19,8 @@ public class Estoque {
                 return produto;
             }
         }
-        throw new RuntimeException("Produto não encontrado");
+        System.out.println("Produto não encontrado");
+        return null;
     }
 
     public static Produto procuraProdutoPorId(int id) {
