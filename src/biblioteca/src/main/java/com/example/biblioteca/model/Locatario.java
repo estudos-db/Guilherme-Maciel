@@ -1,11 +1,14 @@
 package com.example.biblioteca.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
+
+import java.time.LocalDate;
 
 @Data
 @Entity
-@Table(name = "locatario")
+@Builder
 public class Locatario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,13 +20,13 @@ public class Locatario {
     private String sexo;
 
     @Column(nullable = false)
-    private String telegone;
+    private String telefone;
 
     @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)
-    private String dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(nullable = false)
     private String cpf;

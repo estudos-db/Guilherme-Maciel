@@ -3,12 +3,15 @@ package com.example.biblioteca.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.Year;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "autor")
+@Builder
 public class Autor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +27,7 @@ public class Autor {
 
     @Column(nullable = false)
     private String cpf;
+
+    @OneToMany(mappedBy="autor")
+    private List<Livro> livros;
 }
