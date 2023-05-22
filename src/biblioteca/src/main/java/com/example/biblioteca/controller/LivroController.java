@@ -21,6 +21,7 @@ public class LivroController {
     public LivroController(LivroService livroService) {
         this.livroService = livroService;
     }
+
     @PostMapping
     public ResponseEntity<Livro> salvarLivro(@RequestBody CadastroLivro cadastroLivro){
         return new ResponseEntity<>(livroService.salvar(cadastroLivro), HttpStatus.CREATED);
@@ -30,10 +31,7 @@ public class LivroController {
     public ResponseEntity<List<LivroDet>> buscarLivroDisponiveisParaAlugar(){
         return new ResponseEntity<>(livroService.buscarLivrosDisponiveisParaAlugar(), HttpStatus.OK);
     }
-    @GetMapping("/alugado")
-    public ResponseEntity<List<LivroDet>> buscarLivrosAlugados(){
-        return new ResponseEntity<>(livroService.buscarLivrosAlugados(), HttpStatus.OK);
-    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Livro> buscarLivroPorId(@PathVariable Long id){
@@ -42,7 +40,7 @@ public class LivroController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deletarLivroPorId(@PathVariable Long id){
-        livroService.deletarLivroPorId(id);
+        livroService.excluirLivroPorId(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Data
 @Entity
@@ -24,6 +25,18 @@ public class Livro {
     @ManyToOne
     @JoinColumn(name="autor_id", nullable=false)
     private Autor autor;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Livro livro)) return false;
+        return isStatusAluguel() == livro.isStatusAluguel() && getId().equals(livro.getId()) && getNome().equals(livro.getNome()) && getIsbn().equals(livro.getIsbn()) && getDataPublicacao().equals(livro.getDataPublicacao()) && getAutor().equals(livro.getAutor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getNome(), getIsbn(), getDataPublicacao(), isStatusAluguel(), getAutor());
+    }
 
     public Livro(Long id, String nome, String isbn, LocalDate dataPublicacao, boolean statusAluguel, Autor autor) {
         this.id = id;

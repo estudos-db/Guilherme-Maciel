@@ -9,8 +9,7 @@ import java.util.List;
 public interface LivroServiceInterface {
     Livro salvar(CadastroLivro cadastroLivro);
     List<LivroDet> buscarLivrosDisponiveisParaAlugar();
-    List<LivroDet> buscarLivrosAlugados();
     Livro buscarLivroPorId(Long id);
     List<LivroDet> buscarLivroPorAutor(String nome);
-    void deletarLivroPorId(Long id);
+    void excluirLivroPorId(Long id);
 }

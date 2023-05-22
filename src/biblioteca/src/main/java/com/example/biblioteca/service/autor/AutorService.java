@@ -36,7 +36,7 @@ public class AutorService implements AutorServiceInterface{
     }
 
     @Override
-    public void excluirAutorPorId(Long id) {
+    public void excluirAutorPorId(Long id) throws AutorComLivroEx {
         Autor autor = autorRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(MESSAGE_NOT_FOUND));
 

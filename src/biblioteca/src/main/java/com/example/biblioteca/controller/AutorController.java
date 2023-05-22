@@ -13,12 +13,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class AutorController {
 
-    private final AutorService autorService;
+    private final AutorServiceInterface autorService;
 
     @Autowired
-    public AutorController(AutorService autorService){
+    public AutorController(AutorServiceInterface autorService){
         this.autorService = autorService;
     }
+
+
 
     @PostMapping
     public ResponseEntity<Autor> salvar(@RequestBody CadastroAutor autorCadastrado){
@@ -35,5 +37,7 @@ public class AutorController {
         autorService.excluirAutorPorId(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+
 
 }

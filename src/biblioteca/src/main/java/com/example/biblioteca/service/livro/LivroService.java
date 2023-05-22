@@ -44,10 +44,6 @@ public class LivroService implements LivroServiceInterface{
         return livroRepository.findAll().stream().map(LivroMapper::toLivroDet).toList();
     }
 
-    @Override
-    public List<LivroDet> buscarLivrosAlugados() {
-        return livroRepository.findAll().stream().map(LivroMapper::toLivroDet).toList();
-    }
 
     @Override
     public Livro buscarLivroPorId(Long id) {
@@ -60,7 +56,7 @@ public class LivroService implements LivroServiceInterface{
     }
 
     @Override
-    public void deletarLivroPorId(Long id) {
+    public void excluirLivroPorId(Long id) {
         Livro livroEntity = livroRepository.findById(id).orElseThrow(() -> new RuntimeException(MESSAGE_NOT_FOUND));
 
         if (livroEntity.isStatusAluguel()){
